@@ -88,7 +88,7 @@ p {
 /* Adjusted max width for better text wrapping */
 section {
     margin-bottom: 40px;
-    max-width: 1200px; /* Limits the width of the content for better readability */
+    max-width: 1300px; /* Limits the width of the content for better readability */
 }
 
 p, ul {
@@ -98,4 +98,24 @@ p, ul {
 
 ul {
     padding-left: 20px;
+}
+
+.achievements-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between images */
+    justify-content: center; /* Center images */
+}
+
+.achievement-item {
+    flex: 1 1 200px; /* Flex-grow, flex-shrink, and basis for responsive sizing */
+    max-width: 200px; /* Limit max size */
+    text-align: center;
+}
+
+.achievement-pic {
+    width: 100%; /* Ensures the image takes the full width of its container */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 8px; /* Optional, adds rounded corners */
+    object-fit: cover; /* Ensures image covers the area without distorting */
 }
