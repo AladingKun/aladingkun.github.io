@@ -1,0 +1,121 @@
+/* General reset for better consistency */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Sidebar (header) styling */
+header {
+    width: 200px;
+    background-color: #800000;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    border-right: 4px solid #ff8400; /* Adds a line between header and body */
+}
+
+.profile {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+/* Navigation styling */
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    margin: 20px 0;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #CC5500;
+    text-decoration: underline;
+}
+
+/* Main content styling */
+main {
+    flex: 1;
+    margin-left: 200px; /* Offset for the sidebar */
+    padding: 40px;
+    display: flex;
+    flex-direction: column; /* Stack sections vertically */
+    background-color: #fff;
+}
+
+h1, h2 {
+    color: #333;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+/* Added spacing between paragraphs */
+p {
+    margin-bottom: 20px;
+}
+
+/* Adjusted max width for better text wrapping */
+section {
+    margin-bottom: 40px;
+    max-width: 1300px; /* Limits the width of the content for better readability */
+}
+
+p, ul {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+.achievements-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between images */
+    justify-content: center; /* Center images */
+}
+
+.achievement-item {
+    flex: 1 1 200px; /* Flex-grow, flex-shrink, and basis for responsive sizing */
+    max-width: 200px; /* Limit max size */
+    text-align: center;
+}
+
+.achievement-pic {
+    width: 100%; /* Ensures the image takes the full width of its container */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 8px; /* Optional, adds rounded corners */
+    object-fit: cover; /* Ensures image covers the area without distorting */
+}
