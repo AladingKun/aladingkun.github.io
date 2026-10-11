@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trajectory · Alading Kun</title>
+    <link rel="icon" href="Images/genie.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main>
+        <nav class="site-nav">
+            <a href="index.html">Home</a>
+            <a href="trajectory.html" class="current">Trajectory</a>
+        </nav>
+
+        <header class="page-head">
+            <h1>Trajectory</h1>
+            <p class="intro-note">
+                Most CVs only show what worked. This is the full version — the rejections, setbacks, and detours
+                alongside the wins.
+            </p>
+
+            <figure class="apps">
+                <figcaption>Every application, by round. <span class="apps-total"></span></figcaption>
+                <div id="apps"></div>
+            </figure>
+
+            <div class="controls">
+            <div class="filter" role="group" aria-label="Filter timeline">
+                <button type="button" data-filter="all" aria-pressed="true">All</button>
+                <button type="button" data-filter="good" aria-pressed="false"><span class="dot good"></span>Highs <span class="count" data-count="good"></span></button>
+                <button type="button" data-filter="bad" aria-pressed="false"><span class="dot bad"></span>Lows <span class="count" data-count="bad"></span></button>
+                <button type="button" data-filter="ms" aria-pressed="false"><span class="dot ms"></span>Milestones <span class="count" data-count="ms"></span></button>
+            </div>
+            <div class="view-buttons">
+                <button type="button" class="split-toggle" aria-pressed="false">Split view</button>
+                <button type="button" class="sort-toggle">↓ Newest first</button>
+            </div>
+            </div>
+        </header>
+
+        <div class="split-head" aria-hidden="true"><span>Lows</span><span>Highs</span></div>
+        <ol class="journey">
+            <li class="term upcoming">
+                <h2 class="term-label">What’s next · Dec 2027</h2>
+                <ul>
+                    <li class="ev next"><span class="badge">Next</span><div>
+                        <p>Expected to graduate with an M.S.E. in Scientific Computing from the University of Pennsylvania.</p>
+                        <p>Still figuring out the next step, and keeping an open mind about both industry and academia.</p>
+                    </div></li>
+                </ul>
+            </li>
+
+            <li class="term">
+                <h2 class="term-label">Fall 2026</h2>
+                <ul>
+                    <li class="ev good"><span class="badge">High</span><div>
+                        <p>Joined NASA Marshall Space Flight Center as an OSTEM Intern.</p>
+                        <p>Research from the NSF IRES program at KAIST was accepted for presentation at the Transportation Research Board Annual Meeting.</p>
+                    </div></li>
+                    <li class="ev bad"><span class="badge">Low</span><div>
+                        <p>The same paper was not accepted for publication in Transportation Research Record (TRR), with the work considered too theoretical in its submitted form.</p>
+                    </div></li>
+                </ul>
+            </li>
+
+            <li class="term">
+                <h2 class="term-label">Summer 2026</h2>
+                <ul>
+                    <li class="ev good"><span class="badge">High</span><div>
+                        <p>Selected as an NSF IRES Korea Fellow at the Korea Advanced Institute of Science and Technology (KAIST).</p>
+                        <p>Conducted research on LLM-assisted pedestrian route recommendation.</p>
+                    </div></li>
+                </ul>
+            </li>
+
+            <li class="term">
+                <h2 class="term-label">Fall 2025</h2>
+                <ul>
+                    <li class="ev ms"><span class="badge">Milestone</span><div>
+                        <p>Enrolled in the M.S.E. in Scientific Computing program at the University of Pennsylvania.</p>
+                    </div></li>
+                    <li class="ev good"><span class="badge">High</span><div>
+                        <p>Served as a Graduate Teaching Assistant for a graduate-level data science course.</p>
+                    </div></li>
+                </ul>
+            </li>
+
+            <li class="term">
+                <h2 class="term-label">Spring 2025</h2>
+                <ul>
+                    <li class="ev ms"><span class="badge">Milestone</span><div>
+                        <p>Became a STEM instructor at a local children’s STEM program.</p>
+                    </div></li>
+                    <li class="ev good"><span class="badge">High</span><div>
+                        <p class="ev-title">Master’s Offers</p>
+                        <ul class="offers" data-round="masters-2025">
+                            <li>University of Pennsylvania — M.S.E. in Scientific Computing</li>
+                            <li>Rice University — Master of Computational and Applied Mathematics (MCAAM)</li>
+                            <li>University of Southern California — M.S. in Operational Research</li>
+                            <li>University of Southern California — M.S. in Computer Science</li>
+                            <li>Columbia University — M.S. in Applied Mathematics</li>
+                        </ul>
+                    </div></li>
+                    <li class="ev bad"><span class="badge">Low</span><div>
+                        <p class="ev-title">Research Setback</p>
+                        <p>Stopped pursuing publication of one of my earlier research projects as work became busier and I decided it wasn’t strong enough to publish.</p>
+                    </div></li>
+                    <li class="ev bad"><span class="badge">Low</span><div>
+                        <p class="ev-title">Master’s Rejections</p>
+                        <ul class="rejections" data-round="masters-2025">
+                            <li>Harvard University — Computational Science and Engineering</li>
+                            <li>Johns Hopkins University — Applied Mathematics and Statistics</li>
+                            <li>University of Southern California — Applied Mathematics</li>
+                            <li>UIUC — Computer Science</li>
+                            <li>UIUC — Applied Mathematics</li>
+                            <li>Virginia Tech — Mathematics</li>
+                            <li>Stanford University — Computational and Mathematical Engineering</li>
+                            <li>University of Michigan — Applied and Interdisciplinary Mathematics</li>
+                            <li>University of Chicago — Computational and Applied Mathematics</li>
+                        </ul>
+                    </div></li>
+                    <li class="ev bad"><span class="badge">Low</span><div>
+                        <p class="ev-title">PhD Rejections</p>
+                        <ul class="rejections" data-round="phd-2025">
+                            <li>MIT — Computational Science and Engineering</li>
+                            <li>MIT — Electrical Engineering and Computer Science</li>
+                        </ul>
+                    </div></li>
+                    <li class="ev good"><span class="badge">High</span><div>
+                        <p>Joined the Empathic Computing Laboratory at the University of South Australia as a remote Research Intern.</p>
+                    </div></li>
+                </ul>
+            </li>
+
+            <li class="term">
+                <h2 class="term-label">Fall 2024</h2>
+                <ul>
+                    <li class="ev good"><span class="badge">High</span><div>
+                        <p>My Ross Dynamics Lab work was used in another research project, and I was included as a co-author.</p>
+                    </div></li>
+                    <li class="ev ms"><span class="badge">Milestone</span><div>
+                        <p>Decided to pursue a master’s degree to strengthen my technical background, improve my career options, and give myself another opportunity to pursue academia.</p>
+                    </div></li>
+                </ul>
+            </li>
+
+            <li class="term">
+                <h2 class="term-label">Spring 2024</h2>
+                <ul>
+                    <li class="ev good"><span class="badge">High</span><div>
+                        <p>An HCI paper I co-authored with a team at the Notification Systems Lab was accepted to CHI Extended Abstracts.</p>
+                    </div></li>
+                    <li class="ev ms"><span class="badge">Milestone</span><div>
+                        <p>Continued research with Ross Dynamics Lab and worked toward publishing the project.</p>
+                        <p>Returned to the clinical-trial startup full-time while searching for a position in my field, but later decided to step away.</p>
+                    </div></li>
+                    <li class="ev bad"><span class="badge">Low</span><div>
+                        <p class="ev-title">PhD Rejections</p>
+                        <ul class="rejections" data-round="phd-2024">
+                            <li>MIT — Computational Science and Engineering</li>
+                            <li>Stanford University — Computational Science and Engineering</li>
+                            <li>Caltech — Computing and Mathematical Sciences</li>
+                            <li>UC Berkeley — Computer Science, CDSS Track</li>
+                            <li>Georgia Institute of Technology — Computational Science and Engineering</li>
+                            <li>UIUC — Computer Science, CSE Track</li>
+                            <li>Princeton University — Computer Science</li>
+                        </ul>
+                    </div></li>
+                    <li class="ev bad"><span class="badge">Low</span><div>
+                        <p class="ev-title">Career Setback</p>
+                        <p>Was unable to find a full-time position related to my degree for more than 10 months.</p>
+                    </div></li>
+                </ul>
+            </li>
+
+            <li class="term">
+                <h2 class="term-label">Fall 2023</h2>
+                <ul>
+                    <li class="ev good"><span class="badge">High</span><div>
+                        <p>Completed a capstone project with mentorship from the National Institute of Standards and Technology (NIST).</p>
+                        <p>Joined the Notification Systems Lab as a research assistant working on HCI and computational social science.</p>
+                        <p>Graduated from Virginia Tech with honors with a B.S. in Computational Modeling and Data Analytics and minors in Mathematics and Computer Science.</p>
+                    </div></li>
+                    <li class="ev ms"><span class="badge">Milestone</span><div>
+                        <p>Continued research independently at Ross Dynamics Lab.</p>
+                        <p>Decided to continue toward academia and applied to PhD programs.</p>
+                    </div></li>
+                </ul>
+            </li>
+
+            <li class="term">
+                <h2 class="term-label">Summer 2023</h2>
+                <ul>
+                    <li class="ev good"><span class="badge">High</span><div>
+                        <p>Joined Ross Dynamics Lab through an NSF summer undergraduate research program.</p>
+                        <p>Began gaining more serious experience in machine learning, computational modeling, and research.</p>
+                    </div></li>
+                </ul>
+            </li>
+
+            <li class="term">
+                <h2 class="term-label">Spring 2023</h2>
+                <ul>
+                    <li class="ev ms"><span class="badge">Milestone</span><div>
+                        <p>Joined a Natural Language Processing Lab in my first research assistant position.</p>
+                    </div></li>
+                    <li class="ev bad"><span class="badge">Low</span><div>
+                        <p>The project ended after changes in the lab’s research direction.</p>
+                    </div></li>
+                </ul>
+            </li>
+
+            <li class="term">
+                <h2 class="term-label">Fall 2022</h2>
+                <ul>
+                    <li class="ev bad"><span class="badge">Low</span><div>
+                        <p class="ev-title">Undergraduate Transfer Rejection — Computer Science</p>
+                        <ul class="rejections" data-round="transfer-2022">
+                            <li>Georgia Institute of Technology</li>
+                        </ul>
+                    </div></li>
+                </ul>
+            </li>
+
+            <li class="term">
+                <h2 class="term-label">Summer 2022</h2>
+                <ul>
+                    <li class="ev ms"><span class="badge">Milestone</span><div>
+                        <p>Joined a startup as a Drug Depot Operations Intern and gained experience in clinical-trial operations.</p>
+                        <p>After the internship, continued working there part-time.</p>
+                    </div></li>
+                </ul>
+            </li>
+
+            <li class="term">
+                <h2 class="term-label">Spring 2022</h2>
+                <ul>
+                    <li class="ev ms"><span class="badge">Milestone</span><div>
+                        <p>Recovered and moved to Blacksburg to attend Virginia Tech in person.</p>
+                    </div></li>
+                    <li class="ev bad"><span class="badge">Low</span><div>
+                        <p class="ev-title">Undergraduate Transfer Rejections — Computer Science</p>
+                        <ul class="rejections" data-round="transfer-2022">
+                            <li>Stanford University</li>
+                            <li>Brown University</li>
+                            <li>New York University</li>
+                            <li>Northwestern University</li>
+                            <li>University of Pennsylvania</li>
+                            <li>Rice University</li>
+                            <li>Yale University</li>
+                            <li>UC Berkeley</li>
+                            <li>UCLA</li>
+                            <li>UC San Diego</li>
+                        </ul>
+                    </div></li>
+                </ul>
+            </li>
+
+            <li class="term">
+                <h2 class="term-label">Fall 2021</h2>
+                <ul>
+                    <li class="ev bad"><span class="badge">Low</span><div>
+                        <p>Got seriously ill and stayed home for the semester to recover.</p>
+                    </div></li>
+                </ul>
+            </li>
+
+            <li class="term">
+                <h2 class="term-label">Summer 2021</h2>
+                <ul>
+                    <li class="ev ms"><span class="badge">Milestone</span><div>
+                        <p>Found my first technical job as a Fitter / Software Testing Assistant.</p>
+                        <p>Helped assemble a 60-meter-long package-sorting machine and supported software testing.</p>
+                    </div></li>
+                </ul>
+            </li>
+
+            <li class="term">
+                <h2 class="term-label">Spring 2021</h2>
+                <ul>
+                    <li class="ev bad"><span class="badge">Low</span><div>
+                        <p>Continued taking college courses remotely because of the pandemic.</p>
+                    </div></li>
+                </ul>
+            </li>
+
+            <li class="term">
+                <h2 class="term-label">Fall 2020</h2>
+                <ul>
+                    <li class="ev ms"><span class="badge">Milestone</span><div>
+                        <p>Enrolled at Virginia Tech.</p>
+                    </div></li>
+                    <li class="ev good"><span class="badge">High</span><div>
+                        <p>Built an autonomous delivery drone prototype with friends.</p>
+                    </div></li>
+                    <li class="ev bad"><span class="badge">Low</span><div>
+                        <p>Started college remotely because of the COVID-19 pandemic.</p>
+                    </div></li>
+                </ul>
+            </li>
+
+            <li class="term">
+                <h2 class="term-label">Spring 2020</h2>
+                <ul>
+                    <li class="ev ms"><span class="badge">Milestone</span><div>
+                        <p>Graduated from Princeton High School.</p>
+                    </div></li>
+                    <li class="ev good"><span class="badge">High</span><div>
+                        <p class="ev-title">Undergraduate Offers</p>
+                        <ul class="offers" data-round="undergrad-2020">
+                            <li>Virginia Tech</li>
+                            <li>Rutgers University–Newark</li>
+                            <li>Penn State Altoona</li>
+                        </ul>
+                    </div></li>
+                    <li class="ev bad"><span class="badge">Low</span><div>
+                        <p class="ev-title">Undergraduate Admission Rejections — Computer Science</p>
+                        <ul class="rejections" data-round="undergrad-2020">
+                            <li>Rutgers University–New Brunswick</li>
+                            <li>Penn State University Park</li>
+                            <li>Stevens Institute of Technology</li>
+                            <li>University of Michigan</li>
+                            <li>Lehigh University</li>
+                            <li>Georgia Institute of Technology</li>
+                        </ul>
+                    </div></li>
+                </ul>
+            </li>
+
+            <li class="term">
+                <h2 class="term-label">Fall 2018</h2>
+                <ul>
+                    <li class="ev good"><span class="badge">High</span><div>
+                        <p>Made money throughout high school by fixing phones, assembling PCs, and taking on small coding projects.</p>
+                    </div></li>
+                </ul>
+            </li>
+
+            <li class="term">
+                <h2 class="term-label">Spring 2017</h2>
+                <ul>
+                    <li class="ev good"><span class="badge">High</span><div>
+                        <p>Founded a Computer Hardware Club with friends.</p>
+                    </div></li>
+                </ul>
+            </li>
+
+            <li class="term">
+                <h2 class="term-label">Fall 2016</h2>
+                <ul>
+                    <li class="ev ms"><span class="badge">Milestone</span><div>
+                        <p>Enrolled at Princeton High School.</p>
+                    </div></li>
+                </ul>
+            </li>
+
+            <li class="term">
+                <h2 class="term-label">Summer 2016</h2>
+                <ul>
+                    <li class="ev ms"><span class="badge">Milestone</span><div>
+                        <p>Moved from Beijing to the United States, beginning a major new chapter in my life.</p>
+                    </div></li>
+                </ul>
+            </li>
+
+
+        </ol>
+    </main>
+
+    <footer>© 2026 Alading Kun</footer>
+
+    <script>
+        // ---------- Applications chart ----------
+        const ROUNDS = [
+            { key: 'undergrad-2020', label: 'Undergrad', year: '2020' },
+            { key: 'transfer-2022', label: 'Transfer', year: '2022' },
+            { key: 'phd-2024', label: 'PhD', year: '2024' },
+            { key: 'masters-2025', label: 'Master’s', year: '2025' },
+            { key: 'phd-2025', label: 'PhD', year: '2025' },
+        ];
+        const listed = (cls, key) => [...document.querySelectorAll(`.${cls}[data-round="${key}"] li`)].map((li) => li.textContent.trim());
+        (function drawApps() {
+            const box = document.getElementById('apps');
+            let rejected = 0, offered = 0;
+            ROUNDS.forEach((r) => {
+                const names = listed('rejections', r.key);
+                const offers = listed('offers', r.key);
+                rejected += names.length;
+                offered += offers.length;
+                const row = document.createElement('div');
+                row.className = 'apps-row';
+                const label = document.createElement('span');
+                label.className = 'apps-label';
+                label.textContent = `${r.label} · ${r.year}`;
+                const cells = document.createElement('div');
+                cells.className = 'apps-cells';
+                const add = (name, kind) => {
+                    const c = document.createElement('span');
+                    c.className = 'cell ' + kind;
+                    c.textContent = kind === 'offer' ? '✓' : '✕';
+                    c.title = (kind === 'offer' ? 'Offer: ' : 'Rejected: ') + name;
+                    c.setAttribute('aria-label', c.title);
+                    cells.appendChild(c);
+                };
+                offers.forEach((n) => add(n, 'offer'));
+                names.forEach((n) => add(n, 'reject'));
+                const tally = document.createElement('span');
+                tally.className = 'apps-tally';
+                tally.textContent = `${offers.length}/${offers.length + names.length}`;
+                row.append(label, cells, tally);
+                box.appendChild(row);
+            });
+            document.querySelector('.apps-total').textContent = `${rejected} rejections · ${offered} offers.`;
+        })();
+
+        // ---------- Split view ----------
+        const splitToggle = document.querySelector('.split-toggle');
+        splitToggle.addEventListener('click', () => {
+            const on = document.body.classList.toggle('split');
+            splitToggle.setAttribute('aria-pressed', on);
+        });
+
+        // ---------- Sort & filter ----------
+        const journey = document.querySelector('.journey');
+        const sortToggle = document.querySelector('.sort-toggle');
+        let newestFirst = true;
+        sortToggle.addEventListener('click', () => {
+            newestFirst = !newestFirst;
+            [...journey.children].reverse().forEach((term) => journey.appendChild(term));
+            sortToggle.textContent = newestFirst ? '↓ Newest first' : '↑ Oldest first';
+        });
+
+        document.querySelectorAll('[data-count]').forEach((el) => {
+            el.textContent = document.querySelectorAll('.ev.' + el.dataset.count).length;
+        });
+
+        const buttons = document.querySelectorAll('.filter button');
+        buttons.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                const f = btn.dataset.filter;
+                buttons.forEach((b) => b.setAttribute('aria-pressed', b === btn));
+                document.querySelectorAll('.ev').forEach((ev) => {
+                    ev.hidden = f !== 'all' && !ev.classList.contains(f);
+                });
+                document.querySelectorAll('.term').forEach((term) => {
+                    term.hidden = !term.querySelector('.ev:not([hidden])');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
