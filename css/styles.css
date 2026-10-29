@@ -390,6 +390,323 @@ ul {
     text-align: right;
 }
 
+/* ---------- Life page ---------- */
+.hobby p + p {
+    margin-top: 14px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.gallery:empty {
+    display: none;
+}
+
+.gallery img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+}
+
+.feature-img {
+    width: 100%;
+    border-radius: 6px;
+    display: block;
+    margin-top: 20px;
+}
+
+.albums {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 20px 16px;
+    margin-top: 16px;
+}
+
+.albums img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    border-radius: 4px;
+    border: 1px solid var(--line);
+}
+
+.albums a {
+    display: block;
+    color: inherit;
+}
+
+.albums a:hover {
+    text-decoration: none;
+}
+
+.albums img {
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.albums a:hover img,
+.albums a:focus-visible img {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+}
+
+.albums a:hover .album-title {
+    color: var(--accent);
+}
+
+.album-title {
+    font-size: 0.85em;
+    font-weight: 500;
+    line-height: 1.35;
+    color: var(--heading);
+    margin-top: 8px;
+}
+
+.hobby .album-artist {
+    font-size: 0.8em;
+    line-height: 1.35;
+    color: var(--muted);
+    margin-top: 2px;
+}
+
+.swatch {
+    display: inline-block;
+    width: 0.8em;
+    height: 0.8em;
+    margin: 0 5px 0 2px;
+    border-radius: 3px;
+    background: var(--accent);
+    vertical-align: -0.05em;
+}
+
+/* ---------- Places I've lived ---------- */
+.hobby .places-summary {
+    font-size: 0.85em;
+    color: var(--muted);
+    margin-top: -12px;
+}
+
+.place-map-wrap {
+    margin: 18px 0 8px;
+}
+
+.place-map {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    background: #141519;
+    border: 1px solid var(--line);
+}
+
+.place-map .land {
+    fill: #24262c;
+    stroke: #2f3137;
+    stroke-width: 0.15;
+}
+
+.place-map .land.lived {
+    fill: #2e3445;
+}
+
+.place-map .leg {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 0.35;
+    stroke-linecap: round;
+    opacity: 0.75;
+}
+
+.place-map .pin circle {
+    fill: var(--accent);
+    transform-box: fill-box;
+    transform-origin: center;
+    transition: transform 0.2s ease;
+}
+
+.place-map .pin .pin-halo {
+    opacity: 0.25;
+}
+
+.place-map .pin.active circle {
+    transform: scale(1.7);
+}
+
+.place-map text {
+    fill: var(--text);
+    font-size: 2.4px;
+    font-family: inherit;
+    pointer-events: none;
+}
+
+/* Journey animation (only when JavaScript is on and motion is allowed) */
+.places-anim .leg {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    transition: stroke-dashoffset 1.1s ease calc(var(--i) * 0.45s);
+}
+
+.places-anim .stay-bar {
+    transform: scaleX(0);
+    transition: transform 0.7s ease calc(var(--i) * 0.12s);
+}
+
+.places-anim.in-view .leg {
+    stroke-dashoffset: 0;
+}
+
+.places-anim.in-view .stay-bar {
+    transform: scaleX(1);
+}
+
+/* Timeline of stays */
+.stays {
+    list-style: none;
+    margin-top: 16px;
+}
+
+.stay {
+    display: grid;
+    grid-template-columns: 10.5em 1fr 8em;
+    align-items: center;
+    gap: 14px;
+    padding: 7px 0;
+    border-top: 1px solid var(--line);
+    font-size: 0.93em;
+    --i: 0;
+}
+
+.stay:last-child {
+    border-bottom: 1px solid var(--line);
+}
+
+.stay-place {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+}
+
+.stay-city {
+    font-weight: 600;
+    color: var(--heading);
+}
+
+.stay-country {
+    font-size: 0.85em;
+    color: var(--muted);
+}
+
+.stay-track {
+    position: relative;
+    height: 8px;
+    border-radius: 4px;
+    background: var(--line);
+}
+
+.stay-bar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: min(var(--l), calc(100% - 6px));
+    width: max(var(--w), 6px);
+    border-radius: 4px;
+    background: var(--accent);
+    opacity: 0.8;
+    transform-origin: left;
+}
+
+.stay.active .stay-bar {
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(148, 177, 255, 0.6);
+}
+
+.stay-years {
+    font-size: 0.85em;
+    color: var(--muted);
+    text-align: right;
+    white-space: nowrap;
+}
+
+.stays-axis {
+    display: grid;
+    grid-template-columns: 10.5em 1fr 8em;
+    gap: 14px;
+    font-size: 0.93em;
+}
+
+.stays-ticks {
+    position: relative;
+    height: 1.6em;
+    font-size: 0.75em;
+    color: var(--muted);
+}
+
+.stays-ticks span {
+    position: absolute;
+    top: 4px;
+    left: var(--l);
+    transform: translateX(-50%);
+}
+
+.stays-ticks span:first-child {
+    transform: none;
+}
+
+.stays-ticks span:last-child {
+    transform: translateX(-100%);
+}
+
+@media (max-width: 600px) {
+    .place-map text {
+        display: none;
+    }
+
+    .stay,
+    .stays-axis {
+        grid-template-columns: 1fr auto;
+        gap: 4px 10px;
+    }
+
+    .stay-place {
+        flex-direction: row;
+        align-items: baseline;
+        gap: 6px;
+    }
+
+    .stay-track {
+        grid-column: 1 / -1;
+        grid-row: 2;
+    }
+
+    .stays-axis > span:first-child,
+    .stays-axis > span:last-child {
+        display: none;
+    }
+
+    .stays-ticks {
+        grid-column: 1 / -1;
+    }
+}
+
+/* ---------- 404 page ---------- */
+.not-found {
+    margin-top: 12vh;
+}
+
+.not-found-code {
+    font-size: 0.8em;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    margin-bottom: 4px;
+}
+
 /* ---------- Footer ---------- */
 footer {
     text-align: center;
