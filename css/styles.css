@@ -627,10 +627,35 @@ ul {
 }
 
 .stay-years {
+    position: relative;
     font-size: 0.85em;
     color: var(--muted);
     text-align: right;
     white-space: nowrap;
+}
+
+/* On hover, the years fade out and the share of my life fades in */
+.stay-when,
+.stay-share {
+    transition: opacity 0.2s ease;
+}
+
+.stay-share {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent);
+    font-weight: 600;
+    opacity: 0;
+}
+
+.stay.active .stay-when {
+    opacity: 0;
+}
+
+.stay.active .stay-share {
+    opacity: 1;
 }
 
 .stays-axis {
