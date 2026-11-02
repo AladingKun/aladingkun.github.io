@@ -421,6 +421,11 @@ ul {
     margin-top: 20px;
 }
 
+/* Same gap below an image as above it */
+.feature-img + p {
+    margin-top: 20px;
+}
+
 .albums {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
